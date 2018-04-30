@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>3 - 冒泡排序方法</title>
+</head>
+<body>
+	<h1>3 - 冒泡排序方法</h1>
+	<script>
+		var t = [1, 83, 33, 5,'a', 23, 77,22, 9] 
+		t.sort()
+		for(var i = 0; i < t.length - 1; i++){
+			for(var j = i + 1; j < t.length - 1; j++){
+				if(t[i] > t[j]){
+					var temp = t[i];
+					t[i] = t[j];
+					t[j] = temp;
+				}
+			}
+		}
+		console.log(t)
+	</script>
+</body>
+</html>
