@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js中json对象数组按对象属性排序</title>
+</head>
+<body>
+    <script>
+        // 在实际工作经常会出现这样一个问题：后台返回一个数组中有i个json数据，需要我们根据json中某一项进行数组的排序
+        let result = [
+            {id: 2, name:'中国银行'},
+            {id: 12, name:'北京银行'},
+            {id: 3, name:'广州银行'},
+            {id: 7, name:'上海银行'},
+        ]
+        // 现在我们根据业务需要，要根据id的大小进行排序，按照id小的json到id大的json顺序重新排列数组的顺序
+
+        // 在js中添加排序的方法：
+        // 语法：arrayObject.sort(sortby)  sortby:可选，规定排序顺序。必须是函数
+        // 如果调用该方法时没有使用参数，将按字母顺序对数组中的元素进行排序，说得更精确点，是按照字符编码的顺序进行排序。要实现这一点，首先应把数组的元素都转换成字符串（如果有必要），以便进行比较。
+
+        // 如果想按照其他标准进行排序，就需要提供比较函数，该函数比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b， 其返回值如下：
+        // 若 a 小于 b，在排序后的数组中 a 应该出现在 b之前，则返回一个 小于 0 的值。
+        // 若 a 大于 b， 则返回一个大于 0 的值。
+
+        // 下面开始使用 sort(sortby) 来进行整个排序，并打印到控制台：
+        console.log(result.sort((a , b) => a.id - b.id))    
+    </script>
+</body>
+</html>
